@@ -57,15 +57,27 @@ if (
 document.querySelector("#remove button").addEventListener('click',function(){
   // TASK #5
 
-var userListEls = document.querySelectorAll('.inactive')
-var userListContainerEl = document.querySelectorAll('#user-list')
-  console.log(typeof userListContainerEl)
-  for ( in userListContainerEl){
-    userListContainerEl.pop([i])
+var userListEls = document.querySelectorAll('#user-list li')
+var userListContainerEl = document.querySelector('#user-list')
+var finalRA = [];
 
-
+console.log(userListEls)
+console.log(userListContainerEl.children)
+var childRA = userListContainerEl.children
+// userListContainerEl.innerHTML = ''
+console.log(childRA)
+  for (i=0;i<8;i++){
+    console.log(childRA[i])
+    if (childRA[i].className === 'active'){
+      userListContainerEl.append(childRA[i])
+    } else if(childRA[i].className === 'inactive'){
+      childRA[i].style.display = 'none'
+    }
   }
+
 })
+
+// LOOK AT THIS AGAIN TOMORROW 2/7
 
 
 document.querySelector("#reverse-squares button").addEventListener('click',function(){
