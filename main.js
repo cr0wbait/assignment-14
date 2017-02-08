@@ -1,6 +1,6 @@
 
 // megakudos to Victor, again, for assisting with understanding DOM syntax & walking me through
-
+// 2/8 update: kudos to Bubba for syntax help on #6!
 document.querySelector("#inject-html button").addEventListener('click',function(){
   // TASK #1
   var answerBoxEl = document.querySelector('#inject-html .answer-box')
@@ -64,7 +64,7 @@ var finalRA = [];
 console.log(userListEls)
 console.log(userListContainerEl.children)
 var childRA = userListContainerEl.children
-// userListContainerEl.innerHTML = ''
+ userListContainerEl.innerHTML = ''
 console.log(childRA)
   for (i=0;i<8;i++){
     console.log(childRA[i])
@@ -74,14 +74,30 @@ console.log(childRA)
       childRA[i].style.display = 'none'
     }
   }
-
 })
-
-// LOOK AT THIS AGAIN TOMORROW 2/7
-
 
 document.querySelector("#reverse-squares button").addEventListener('click',function(){
   // TASK #6
+
+
+var squareEls = document.getElementsByClassName('square')
+var squRay = []
+console.log(typeof squareEls)
+console.log(squareEls)
+  for (props in squareEls){
+    squRay.push(squareEls[props])
+  }
+  squRay.reverse()
+  console.log(squRay)
+  var sqBox = document.querySelector('.sq-box')
+  var squareStr = ''
+  forEach(squRay, function(square, index, theArray){
+    console.log(square)
+    console.log(square.outerHTML)
+    squareStr += square.outerHTML
+  }
+)
+sqBox.innerHTML = squareStr
 })
 
 document.querySelector("#pig-latin button").addEventListener('click',function(){
@@ -97,4 +113,12 @@ var forEach = function(arr, func){
   for( var i = 0; i < arr.length ; i++){
     func(arr[i], i)
   }
+}
+
+function reverseObject(initObj){
+  	var revObj = {};
+  	for (keys in initObj){
+  		revObj[initObj[keys]] = keys
+  	}
+  	return revObj
 }
