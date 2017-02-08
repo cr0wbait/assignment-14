@@ -102,6 +102,24 @@ sqBox.innerHTML = squareStr
 
 document.querySelector("#pig-latin button").addEventListener('click',function(){
   // TASK #7
+  var soontoPig = document.getElementById('tasks')
+  var childRA = soontoPig.children
+  for (i=0;i<childRA.length;i++){
+    var piglet = childRA[i].innerHTML
+    console.log(piglet)
+    piglet = reverse(piglet)
+    console.log(piglet)
+  }
+
+// shoutout to Ed Mann for saving me some time with writing a string reversal function
+// http://eddmann.com/posts/ten-ways-to-reverse-a-string-in-javascript/ #1
+function reverse(s) {
+  var o = '';
+  for (var i = s.length - 1; i >= 0; i--)
+    o += s[i];
+  return o;
+}
+
 })
 
 document.querySelector("#cycle-image button").addEventListener('click',function(){
@@ -113,12 +131,4 @@ var forEach = function(arr, func){
   for( var i = 0; i < arr.length ; i++){
     func(arr[i], i)
   }
-}
-
-function reverseObject(initObj){
-  	var revObj = {};
-  	for (keys in initObj){
-  		revObj[initObj[keys]] = keys
-  	}
-  	return revObj
 }
