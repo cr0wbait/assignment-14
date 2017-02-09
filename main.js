@@ -64,7 +64,6 @@ var finalRA = [];
 console.log(userListEls)
 console.log(userListContainerEl.children)
 var childRA = userListContainerEl.children
- userListContainerEl.innerHTML = ''
 console.log(childRA)
   for (i=0;i<8;i++){
     console.log(childRA[i])
@@ -109,6 +108,7 @@ document.querySelector("#pig-latin button").addEventListener('click',function(){
     console.log(piglet)
     piglet = reverse(piglet)
     console.log(piglet)
+
   }
 
 // shoutout to Ed Mann for saving me some time with writing a string reversal function
