@@ -108,7 +108,7 @@ document.querySelector("#pig-latin button").addEventListener('click',function(){
     console.log(piglet)
     piglet = reverse(piglet)
     console.log(piglet)
-
+    childRA[i].innerHTML = piglet
   }
 
 // shoutout to Ed Mann for saving me some time with writing a string reversal function
